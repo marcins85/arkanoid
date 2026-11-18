@@ -1,1 +1,1 @@
-# arkanoid
+## Simple arkanoid clone
