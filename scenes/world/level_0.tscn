@@ -13,6 +13,15 @@ sky_material = SubResource("ProceduralSkyMaterial_7umm2")
 background_mode = 2
 sky = SubResource("Sky_50oc0")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_frt5n"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khn4m"]
+albedo_color = Color(0.023529412, 0, 1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6vksw"]
+points = PackedVector3Array(-50, 0, -50, -50, 0, 50, 50, 0, -50, 50, 0, 50)
+
 [node name="Level0" type="Node3D" unique_id=1615844226]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1202999652]
@@ -30,3 +39,12 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5
 projection = 1
 current = true
 size = 20.0
+
+[node name="GroundPlane" type="StaticBody3D" parent="." unique_id=1534285144]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GroundPlane" unique_id=1509257978]
+mesh = SubResource("PlaneMesh_frt5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_khn4m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroundPlane" unique_id=654445053]
+shape = SubResource("ConvexPolygonShape3D_6vksw")
