@@ -26,7 +26,7 @@ public partial class Player : CharacterBody3D
 		var targetPosition = Position;
 		targetPosition += Velocity * (float)delta;
 		targetPosition.Y = 0.0f;
-		targetPosition.Z = 0.0f;
+		targetPosition.Z = 9.0f;
 		Position = targetPosition;
 		MoveAndSlide();
 	}
