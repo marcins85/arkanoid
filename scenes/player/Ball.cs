@@ -4,6 +4,7 @@ using System;
 public partial class Ball : CharacterBody3D
 {
 	private Vector3 _direction = new Vector3(0f, 0f, 10f);
+	private float _angleStrength = 10f;
 
 	public override void _Ready()
 	{
@@ -22,9 +23,14 @@ public partial class Ball : CharacterBody3D
 			var hitPoint = collision.GetPosition();
 			if (collision.GetCollider() is Player player)
 			{
-				var playerMesh = player.GetChild<MeshInstance3D>(0);
-				var hitPosition = (collision.GetPosition().X - player.GlobalPosition.X) / playerMesh.GetAabb().Size.X / 2;
-				_direction = new Vector3(hitPosition * 50f, 0f, -10f);
+				var playerMesh = player.mesh;
+				var halfWidth = playerMesh.GetAabb().Size.X / 2f;
+
+				var hitPosition =
+					(hitPoint.X - player.GlobalPosition.X)
+					/ halfWidth;
+
+				_direction = new Vector3(hitPosition * _angleStrength, 0f, -10f).Normalized() * 10f;
 			}
 		}
 	}

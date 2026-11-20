@@ -3,10 +3,13 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	private static float _speed = 10.0f;
+	private static float _speed = 5.0f;
+	[Export]
+	public MeshInstance3D mesh;
 
 	public override void _Ready()
 	{
+		mesh = GetNode<MeshInstance3D>("%MeshInstance3D");
 	}
 
 	public override void _Process(double delta)
