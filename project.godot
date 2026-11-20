@@ -24,6 +24,10 @@ gdscript/warnings/untyped_declaration=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[dotnet]
+
+project/assembly_name="Arkanoid"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

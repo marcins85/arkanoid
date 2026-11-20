@@ -1,7 +1,7 @@
 class_name Player
-extends CharacterBody2D
+extends CharacterBody3D
 
-var speed : float = 5.0
+var speed : float = 10.0
 
 
 func _ready() -> void:
@@ -10,11 +10,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var direction : int = 0
-	if (Input.is_action_just_pressed("ui_left")):
+	if (Input.is_action_pressed("ui_left")):
 		direction = -1
-	if (Input.is_action_just_pressed("ui_right")):
+	if (Input.is_action_pressed("ui_right")):
 		direction = 1
 			
-	velocity = Vector2(direction * speed, 0.0)
+	velocity = Vector3(direction * speed, 0.0, 0.0)
 	position += velocity * delta
+	position.y = 0
+	position.z = 0
 	move_and_slide()
