@@ -32,6 +32,11 @@ public partial class Ball : CharacterBody3D
 
 				_direction = new Vector3(hitPosition * _angleStrength, 0f, -10f).Normalized() * 10f;
 			}
+
+			if (collision.GetCollider() is Block block)
+			{
+				block.Hit();
+			}
 		}
 	}
 }

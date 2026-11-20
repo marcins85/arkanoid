@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3v4l5vmric83" path="res://scenes/player/player.tscn" id="1_6vksw"]
 [ext_resource type="PackedScene" uid="uid://vrgixyfht1i" path="res://scenes/player/ball.tscn" id="2_7umm2"]
+[ext_resource type="PackedScene" uid="uid://ydhcw2d3vrhy" path="res://scenes/block/block.tscn" id="3_50oc0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7umm2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -102,3 +103,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.031952858, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_50oc0")
 
 [node name="Ball" parent="." unique_id=1554596585 instance=ExtResource("2_7umm2")]
+
+[node name="Blocks" type="Node3D" parent="." unique_id=901769896]
+
+[node name="Block" parent="Blocks" unique_id=1797767624 instance=ExtResource("3_50oc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.863228, 0, -3.2613506)
