@@ -17,6 +17,7 @@ collision_mask = 7
 script = ExtResource("1_c27ow")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1706967253]
+unique_name_in_owner = true
 mesh = SubResource("BoxMesh_frt5n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=104454737]
